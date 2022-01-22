@@ -1,11 +1,36 @@
 package boj.step;
 
+import java.util.Scanner;
+
 public class Step3052 {
 	
-	//´Ü°èº°·Î Ç®¾îº¸±â - ¹è¿­
-	//3052¹ø. ³ª¸ÓÁö
+	//ë‹¨ê³„ë³„ë¡œ í’€ì–´ë³´ê¸° - ë°°ì—´
+	//3052ë²ˆ. ë‚˜ë¨¸ì§€
 	public static void main(String[] args) {
 
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[10];
+		int result = 0;
+		
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+			arr[i] %= 42;
+		}
+		
+		for(int i = 0; i < arr.length; i++) {
+			int count = 0;
+			for(int j = i + 1; j < arr.length; j++) {
+				if(arr[i] == arr[j]) { // ê°’ì´ ê°™ìœ¼ë©´
+					count++;
+				}
+			}
+			if(count == 0) {	//ê°’ì´ ë‹¤ë¥´ë©´
+				result++;
+			}
+			
+		}
+		
+		System.out.println(result);
 	}
 
 }
